@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Story Shelf</title>
+
+  <!-- PRELOAD THEME -->
+
+ <script>
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+
+<!-- STYLESHEET -->
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <!-- WEBSITE ICON -->
+  <link rel="favicon" type="image/png" href="https://raw.githubusercontent.com/himadrisingh1027-crypto/mystoryshelf/refs/heads/main/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div id="sidebar" class="sidebar">
+
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+      <h3>My Story Shelf</h3>
+      <button id="closeSidebar">✕</button>
+    </div>
+
+    <!-- User Section -->
+    <div class="sidebar-user">
+      <p id="sidebarEmail">Not logged in</p>
+<button id="sidebarLogout" style="display:none;">Logout</button>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="sidebar-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="library.html">📚 Library</a></li>
+      <li><a href="help.html">❓ Help</a></li>
+      <li id="sidebarLogin"><a href="log-in.html">🔐 Login</a></li>
+    </ul>
+
+  </div>
+
+    <!-- Overlay (for closing sidebar) -->
+  <div id="overlay" class="overlay"></div>
+
+
+
+  <!-- NAVBAR -->
+
+ <nav class="navbar">
+
+    <!-- Menu Button (Left) -->
+    <button id="menuBtn" class="menu-btn">☰</button>
+
+    <!-- APP LOGO -->
+     <a href="index.html" class="logo-link">
+
+     <img 
+     src="icon.png" 
+     alt="My Story Shelf Logo"
+     class="app-logo"
+     >
+
+     </a>
+
+    <!-- Theme Toggle (Right) -->
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  </nav>
+
+  <!-- HEADER  BACKGROUND -->
+
+<header class="header-image interactive-bg">
+
+
+  <!-- BACKGROUND IMAGE -->
+<img 
+  src="https://raw.githubusercontent.com/himadrisingh1027-crypto/mystoryshelf/refs/heads/main/background%20image%201.png"
+  class="header-bg"
+  alt="Books background"
+>
+
+  <!-- Particle Layer -->
+  <div id="particle-layer"></div>
+
+  <!-- DARK OVERLAY -->
+  <div class="header-overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="header-content">
+
+    <!-- MAIN HEADING -->
+    <h2 class="header-title">
+      Welcome to My Story Shelf
+    </h2>
+
+    <!-- SUBTEXT -->
+    <p class="header-subtext">
+      A place where my stories live and grow.  
+      Explore thoughts, ideas, and imagination.
+    </p>
+
+    <!-- SEARCH BAR -->
+    <div class="search-container">
+
+      <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search stories..."
+       >
+
+      <ul id="suggestions"></ul>
+
+    </div>
+  </div>
+</header>
+   
+<main>
+<!--  MAIN HERO SECTION -->
+
+  <section class="hero-section container">
+
+    <!-- Section Title -->
+    <h2>Latest Stories</h2>
+
+    <!-- Latest Stories Container -->
+    <div id="latest-stories" class="story-list"></div>
+
+  </section>
+
+
+  <!-- MAIN story section-->
+
+    <section class="all-stories container">
+
+      <!-- Section Title -->
+      <h2>All Stories</h2>
+
+      <!-- Stories Container -->
+      <div id="book-list" class="story-list"></div>
+
+      <!-- Empty State -->
+      <p id="emptyMessage" class="empty-state">
+        📚 No stories available yet
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>My Story Shelf</h2>
+      <p>
+        A personal archive of stories, thoughts, and imagination.
+        Built to share words that stay.
+      </p>
+
+      <div class="footer-socials">
+        <a href="https://github.com/himadrisingh1027-crypto/thestoryshelf" target="_blank" rel="noopener">
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/mystoryshelf__/" target="_blank" rel="noopener">
+          Instagram
+        </a>
+        <a href="mailto:mystoryshelf1012@gmail.com" target="_blank" rel="noopener">
+          Email
+        </a>
+      </div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html" target="_blank" rel="noopener">
+            Home</a></li>
+          <li><a href="library.html" target="_blank" rel="noopener">Library</a></li>
+          <li><a href="help.html" target="_blank" rel="noopener">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="signup.html" target="_blank" rel="noopener">Sign Up</a></li>
+          <li><a href="log-in.html" target="_blank" rel="noopener">Log In</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>More</h4>
+        <ul>
+          <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
+          <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+          <li><a href="privacy.html" target="_blank" rel="noopener">Privacy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="footer-divider"></div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 My Story Shelf</p>
+    <span>Crafted with words ✍️</span>
+  </div>
+
+</footer>
+
+  <!-- SCRIPTS -->
+  <script type="module" src="menu.js"></script>
+  <script type="module" src="theme.js"></script>
+  <script type="module" src="auth-state.js"></script>
+  <script type="module" src="particle.js"></script>
+  <script type="module" src="cursor.js"></script>
+
+<script type="module" src="test-firestore.js"></script>
+
+
+<script type="module">
+  import { loadBooks } from "./books.js";
+  loadBooks();
+
+  // CTA scroll
+  const ctaBtn = document.querySelector(".cta-btn");
+
+  if (ctaBtn) {
+    ctaBtn.addEventListener("click", () => {
+      document.querySelector(".hero-section").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  }
+</script>
+
+<div id="custom-cursor"></div>
+
+</body>
+</html>
