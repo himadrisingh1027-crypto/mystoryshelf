@@ -1,0 +1,200 @@
+/*==========================================================
+CUSTOM CURSOR
+==========================================================*/
+#custom-cursor{
+
+    position:fixed;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:rgba(255,245,220,.9);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:9999;
+
+    opacity:0;
+
+    box-shadow:
+        0 0 8px rgba(255,245,220,.5),
+        0 0 18px rgba(255,245,220,.25);
+
+    transition:
+        opacity .25s,
+        transform .05s linear;
+
+}
+
+/*==========================================================
+SPARKLES
+==========================================================*/
+
+.spark{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    z-index:9998;
+
+    animation:sparkFade 1.5s forwards;
+
+    background:rgba(255,248,236,.95);
+
+    box-shadow:
+        0 0 5px rgba(255,245,220,.45),
+        0 0 12px rgba(255,240,205,.25);
+
+}
+
+
+/*==================DUST==================*/
+
+.dust{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    background:rgba(255,248,235,.95);
+
+    animation:sparkFade 1.6s linear forwards;
+
+}
+
+.dust::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-4px;
+
+    border-radius:50%;
+
+    background:rgba(255,230,170,.45);
+
+    filter:blur(5px);
+
+    animation:glowFade .45s forwards;
+
+}
+/*==================STAR==================*/
+
+.star{
+
+    width:7px;
+    height:7px;
+
+    background:white;
+
+    clip-path:polygon(
+        50% 0%,
+        62% 38%,
+        100% 50%,
+        62% 62%,
+        50% 100%,
+        38% 62%,
+        0% 50%,
+        38% 38%
+    );
+
+    box-shadow:0 0 8px rgba(255,230,170,.55);
+
+}
+
+/*==================FLECKS==================*/
+
+.fleck{
+
+    border-radius:3px;
+
+    background:rgba(255,241,205,.92);
+
+    transform:rotate(35deg);
+
+}
+
+/*==========================================================
+LIGHT MODE
+==========================================================*/
+
+.spark{
+
+    background:#d4aa4e;
+
+    box-shadow:
+        0 0 10px #d4aa4e,
+        0 0 18px rgba(212,170,78,.8);
+
+}
+
+
+/*==========================================================
+DARK MODE
+==========================================================*/
+
+html.dark .spark{
+
+    background:#f7df9c;
+
+    box-shadow:
+        0 0 8px rgba(247,223,156,.75),
+        0 0 18px rgba(247,223,156,.35);
+
+}
+
+
+/*==========================================================
+ANIMATION
+==========================================================*/
+@keyframes sparkFade{
+
+    0%{
+        opacity:1;
+        transform:
+            translate(0,0)
+            scale(1)
+            rotate(0deg);
+
+    }
+    40%{
+        opacity:.95;
+
+    }
+    70%{
+        opacity:.6;
+
+    }
+    100%{
+        opacity:0;
+        transform:
+            translate(var(--x),var(--y))
+            scale(.55)
+            rotate(90deg);
+
+    }
+
+}
+
+@keyframes glowFade{
+
+    from{
+        opacity:.9;
+        transform:scale(1);
+
+    }
+    to{
+        opacity:0;
+        transform:scale(2);
+
+    }
+
+}

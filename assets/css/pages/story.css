@@ -1,0 +1,881 @@
+/* ==========================================================
+   MY STORY SHELF
+   STORY PAGE
+========================================================== */
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+.story-page {
+
+    min-height: 100vh;
+
+    padding:
+        110px
+        6vw
+        100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(245, 237, 222, 0.95),
+            rgba(238, 226, 205, 0.98)
+        );
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.story-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0
+        6vw;
+
+    background:
+        rgba(45, 32, 24, 0.94);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+/* ==========================================================
+   BACK BUTTON
+========================================================== */
+
+.back-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        #f5ead9;
+
+    text-decoration: none;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.95rem;
+
+    letter-spacing:
+        0.02em;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.back-button:hover {
+
+    color:
+        #d9a86c;
+
+    transform:
+        translateX(-4px);
+
+}
+
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.story-loading {
+
+    min-height: 60vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        #5b4637;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        1.15rem;
+
+}
+
+
+/* ==========================================================
+   STORY CONTAINER
+========================================================== */
+
+.story-container {
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        320px
+        minmax(0, 1fr);
+
+    gap:
+        70px;
+
+    align-items:
+        start;
+
+}
+
+
+/* ==========================================================
+   COVER
+========================================================== */
+
+.story-cover-wrapper {
+
+    position:
+        sticky;
+
+    top:
+        105px;
+
+}
+
+
+.story-cover {
+
+    width:
+        100%;
+
+    aspect-ratio:
+        2 / 3;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+    border-radius:
+        5px;
+
+    box-shadow:
+        0
+        20px
+        45px
+        rgba(49, 32, 22, 0.25);
+
+    border:
+        8px solid
+        #f8f0e3;
+
+    outline:
+        1px solid
+        rgba(73, 48, 31, 0.2);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+.story-cover:hover {
+
+    transform:
+        translateY(-6px)
+        rotate(-0.5deg);
+
+    box-shadow:
+        0
+        28px
+        55px
+        rgba(49, 32, 22, 0.3);
+
+}
+
+
+/* ==========================================================
+   STORY INFORMATION
+========================================================== */
+
+.story-info {
+
+    max-width:
+        760px;
+
+}
+
+
+/* ==========================================================
+   GENRE
+========================================================== */
+
+.story-genre {
+
+    display:
+        inline-block;
+
+    margin:
+        0 0 16px;
+
+    padding:
+        6px
+        13px;
+
+    border:
+        1px solid
+        rgba(117, 77, 43, 0.25);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 249, 238, 0.65);
+
+    color:
+        #8a5d37;
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.story-title {
+
+    margin:
+        0;
+
+    color:
+        #33231b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4.8rem
+        );
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -0.025em;
+
+}
+
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
+
+.story-subtitle {
+
+    margin:
+        14px 0 0;
+
+    color:
+        #765e4c;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* ==========================================================
+   AUTHOR
+========================================================== */
+
+.story-author {
+
+    margin:
+        24px 0 0;
+
+    color:
+        #4f3b2e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.95rem;
+
+}
+
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.story-tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin:
+        18px 0 0;
+
+}
+
+
+.story-tag {
+
+    padding:
+        6px
+        10px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(91, 67, 50, 0.08);
+
+    color:
+        #76533b;
+
+    font-size:
+        0.8rem;
+
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.story-description {
+
+    margin:
+        35px 0 0;
+
+    padding:
+        25px 0;
+
+    border-top:
+        1px solid
+        rgba(83, 58, 40, 0.15);
+
+    border-bottom:
+        1px solid
+        rgba(83, 58, 40, 0.15);
+
+    color:
+        #634d3d;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        1.08rem;
+
+    line-height:
+        1.8;
+
+    font-style:
+        italic;
+
+}
+
+
+/* ==========================================================
+   STORY CONTENT
+========================================================== */
+
+.story-content {
+
+    margin-top:
+        50px;
+
+    color:
+        #30231c;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        1.15rem;
+
+    line-height:
+        2;
+
+}
+
+
+/* ==========================================================
+   CONTENT PARAGRAPHS
+========================================================== */
+
+.story-content p {
+
+    margin:
+        0 0 1.7em;
+
+}
+
+
+/* ==========================================================
+   DROP CAP
+========================================================== */
+
+.story-content p:first-child::first-letter {
+
+    float:
+        left;
+
+    margin:
+        7px 9px 0 0;
+
+    color:
+        #8a5a32;
+
+    font-size:
+        4.2rem;
+
+    line-height:
+        0.75;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+}
+
+
+/* ==========================================================
+   EMPTY STORY
+========================================================== */
+
+.story-empty {
+
+    color:
+        #806b59;
+
+    font-style:
+        italic;
+
+}
+
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.story-error {
+
+    min-height:
+        60vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    color:
+        #4f3b2e;
+
+}
+
+
+.story-error h2 {
+
+    margin:
+        0 0 12px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        2rem;
+
+}
+
+
+.story-error p {
+
+    margin:
+        0 0 25px;
+
+}
+
+
+.story-error a {
+
+    display:
+        inline-block;
+
+    padding:
+        11px
+        18px;
+
+    border-radius:
+        8px;
+
+    background:
+        #5c3d2e;
+
+    color:
+        #fff8ee;
+
+    text-decoration:
+        none;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.story-error a:hover {
+
+    background:
+        #7a5239;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+.dark .story-page {
+
+    background:
+        linear-gradient(
+            180deg,
+            #211914,
+            #18120f
+        );
+
+}
+
+
+.dark .story-title {
+
+    color:
+        #f1e4d2;
+
+}
+
+
+.dark .story-subtitle {
+
+    color:
+        #c7ad91;
+
+}
+
+
+.dark .story-author {
+
+    color:
+        #d4bca3;
+
+}
+
+
+.dark .story-description {
+
+    color:
+        #c8b19a;
+
+    border-color:
+        rgba(255, 255, 255, 0.1);
+
+}
+
+
+.dark .story-content {
+
+    color:
+        #eadcc9;
+
+}
+
+
+.dark .story-genre {
+
+    background:
+        rgba(218, 172, 111, 0.08);
+
+    border-color:
+        rgba(218, 172, 111, 0.25);
+
+    color:
+        #d8a96c;
+
+}
+
+
+.dark .story-tag {
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        #d2b79b;
+
+}
+
+
+.dark .story-loading {
+
+    color:
+        #d9c2aa;
+
+}
+
+
+.dark .story-error {
+
+    color:
+        #e2cdb5;
+
+}
+
+/* ==========================================================
+   PROTECT STORY CONTENT FROM NORMAL TEXT COPYING
+========================================================== */
+
+.story-content {
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+
+/* Prevent dragging text/images from the story */
+
+.story-content,
+.story-content * {
+
+    -webkit-user-drag: none;
+    user-drag: none;
+
+}
+
+
+/* Keep the cover draggable protection too */
+
+.story-cover {
+
+    -webkit-user-drag: none;
+    user-drag: none;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 850px) {
+
+    .story-page {
+
+        padding:
+            100px
+            5vw
+            70px;
+
+    }
+
+
+    .story-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+
+    }
+
+    .story-cover-wrapper {
+
+        position: static;
+        width: min( 270px, 75vw );
+        margin: 0 auto;
+
+    }
+
+    .story-info {
+
+        max-width: none;
+
+    }
+
+    .story-title {
+
+        text-align: center;
+
+    }
+
+    .story-subtitle,
+    .story-author {
+
+        text-align: center;
+
+    }
+
+    .story-genre {
+
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .story-tags {
+        justify-content:
+            center;
+    }
+
+    .story-description {
+        text-align:
+            center;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .story-header {
+
+        height: 62px;
+        padding: 0 5vw;
+
+    }
+
+    .story-page {
+
+        padding:
+            85px
+            5vw
+            50px;
+
+    }
+
+    .story-title {
+
+        font-size: 2.35rem;
+
+    }
+
+    .story-content {
+
+        font-size: 1.05rem;
+        line-height: 1.9;
+
+    }
+
+    .story-content p:first-child::first-letter {
+
+        font-size:
+            3.4rem;
+    }
+}

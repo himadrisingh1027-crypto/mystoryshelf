@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F6F0E8">
+<title>My Story Shelf</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+            rel="stylesheet">
+
+<!-- Prevent Flash -->
+<script>
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme==="dark"){
+    document.documentElement.classList.add("dark");
+}
+ </script>
+</head>
+
+<body>
+    
+<!-- Overlay -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+
+    <!-- Header -->
+    <div class="sidebar-header">
+
+        <div class="sidebar-brand">
+
+            <img
+                src="assets/images/favicon.png"
+                class="sidebar-logo"
+                alt="Logo">
+
+            <div>
+
+                <h2>My Story Shelf</h2>
+
+                <small>Your Personal Library</small>
+            </div>
+        </div>
+
+        <button id="closeSidebar" class="close-sidebar">
+
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+
+    <!-- User -->
+
+    <div class="user-card">
+        <div class="user-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+        <div>
+
+            <span class="welcome">
+                Welcome Back
+            </span>
+
+            <h3 id="userName">
+                Reader
+            </h3>
+
+            <p id="userEmail">
+            reader@example.com
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="active">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </a>
+
+        <a href="#latestStories">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Latest Stories
+
+        </a>
+
+        <a href="#allStories">
+            <i class="fa-solid fa-book"></i>
+
+            All Stories
+
+        </a>
+
+        <a href="allpages/about.html">
+            <i class="fa-solid fa-feather"></i>
+
+            About
+
+        </a>
+    </nav>
+    <!-- Footer -->
+
+    <div class="sidebar-footer">
+        <button id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+    </div>
+</aside>
+
+<!-- ======================================= HEADER ======================================= -->
+
+<header class="site-header">
+
+    <button id="menuBtn" class="header-btn" aria-label="Open Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="index.html" class="logo-area">
+
+        <img
+            src="assets/images/favicon.png"
+            alt="My Story Shelf Logo"
+            class="app-logo">
+
+        <span class="site-title">
+            My Story Shelf
+        </span>
+    </a>
+
+    <button id="themeToggle" class="header-btn" aria-label="Toggle Theme">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+</header>
+
+<!-- ======================================= HERO ======================================= -->
+
+<section class="hero">
+
+    <div class="particles"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-subtitle">
+                Welcome to My Story Shelf
+            </span>
+
+            <h1 class="hero-title">
+                Every Story Deserves a Shelf
+            </h1>
+
+            <p class="hero-description">
+                Every shelf holds a memory. Explore stories crafted from imagination, adventure, and experience.
+            </p>
+
+        </div>
+<!-- Search Bar -->
+       <div class="hero-search">
+
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+    <input
+        id="searchInput"
+        type="text"
+        placeholder="Search stories, genres or keywords..."
+        autocomplete="off">
+
+    <button id="searchBtn">
+        Explore
+    </button>
+
+</div>
+
+<div id="searchSuggestions" class="search-suggestions"></div>
+
+        <div class="scroll-down">
+            <!-- Scroll indicator -->
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================= LATEST STORIES ======================================= -->
+
+<section id="latestStories" class="latest-stories">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                Newly Added
+            </span>
+
+            <h2>Latest Stories</h2>
+
+            <p>
+                Freshly written stories waiting for their first readers.
+            </p>
+
+        </div>
+
+
+        <!-- Shelf Wrapper -->
+
+        <div class="bookshelf-wrapper">
+
+            <!-- Left Button -->
+
+        <button
+            id="shelfPrev"
+            class="shelf-arrow left"
+            aria-label="Previous Stories">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+            <!-- Books -->
+
+          <div class="bookshelf-track">
+
+    <div
+        id="bookshelf"
+        class="bookshelf">
+
+          <!-- Book --> 
+              <article class="book fantasy"> 
+                <div class="book-spine">
+                    <span class="book-title">
+                             The Last Letter
+                   </span>
+
+                 <span class="book-author">
+
+                Himadri Singh
+
+            </span>
+
+            <span class="book-icon">
+                <i class="fa-solid fa-feather"></i>
+            </span>
+
+            <span class="book-genre">
+                Fantasy
+            </span>
+                    </div>
+               
+                    <!-- Cover -->
+
+                   <div class="book-cover">
+
+                      <img
+                       src="assets/images/story1.jpg"
+                       alt="The Last Letter">
+
+                       <div class="cover-overlay">
+
+                         <h3>The Last Letter</h3>
+
+                         <p>  A mysterious letter arrives years too late...  </p>
+
+                     <button class="read-story-btn">
+                      Read Story
+                       </button>
+              </div>
+            </div>
+         </div>
+       </div>
+       </article>
+
+                <!-- Book -->
+
+                <article
+                    class="book mystery" 
+                    data-story="story2">
+
+                    <div class="book-spine">
+
+                        <span class="book-title">
+
+                            Forgotten Memories
+
+                        </span>
+
+                        <span class="book-icon">
+
+                            <i class="fa-solid fa-key"></i>
+
+                        </span>
+
+                        <span class="book-genre">
+
+                            Mystery
+
+                        </span>
+
+                    </div>
+
+                    <div class="book-cover">
+
+                        <img
+                            src="assets/images/story2.jpg"
+                            alt="Forgotten Memories">
+
+                    </div>
+
+                </article>
+
+
+                <!-- Book -->
+
+                <article
+                    class="book adventure" 
+                    data-story="story1">
+
+                    <div class="book-spine">
+
+                        <span class="book-title">
+
+                            Beyond The Horizon
+
+                        </span>
+
+                        <span class="book-icon">
+
+                            <i class="fa-solid fa-compass"></i>
+
+                        </span>
+
+                        <span class="book-genre">
+
+                            Adventure
+
+                        </span>
+
+                    </div>
+
+                    <div class="book-cover">
+
+                        <img
+                            src="assets/images/story3.jpg"
+                            alt="Beyond The Horizon">
+
+                    </div>
+
+                </article>
+
+
+            <!--   for colouring scheme  -->
+                 <article class="book fantasy"></article>
+                 <article class="book mystery"></article>
+                 <article class="book romance"></article>
+                 <article class="book horror"></article>
+                 <article class="book sci-fi"></article>
+                 <article class="book historical"></article>
+
+
+
+
+            <!--   thickness of book-->
+               <article
+                class="book fantasy thick"></article>
+                <article
+                class="book mystery medium"></article>
+                <article
+                class="book adventure thin"></article>
+
+                <!-- More books from Firebase later -->
+
+
+            </div>
+
+
+            <!-- Right Button -->
+
+            <button
+                id="shelfNext"
+                class="shelf-arrow right"
+                aria-label="Next Stories">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- Wooden Shelf -->
+
+        <div class="wooden-shelf">
+
+            <div class="shelf-top"></div>
+
+            <div class="shelf-front"></div>
+
+            <div class="shelf-shadow"></div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ======================================= ALL STORIES ======================================= -->
+<section id="allStories" class="all-stories">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                Library Catalogue
+            </span>
+
+            <h2>All Stories</h2>
+
+            <p>
+                Browse every story waiting on the shelf.
+            </p>
+
+        </div>
+
+        <!-- Search & Filters -->
+
+        <div class="catalog-toolbar">
+
+            <div class="catalog-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    id="catalogSearch"
+                    type="text"
+                    placeholder="Search stories...">
+
+            </div>
+
+            <div class="genre-filters">
+
+                <button class="active">
+                    All
+                </button>
+
+                <button>
+                    Fantasy
+                </button>
+
+                <button>
+                    Mystery
+                </button>
+
+                <button>
+                    Adventure
+                </button>
+            </div>
+        </div>
+
+        <!-- Stories -->
+
+        <div
+            id="storyList"
+            class="story-grid">
+
+        </div>
+    </div>
+</section>
+
+<!-- ======================================= FOOTER ======================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+
+        <div class="footer-brand">
+
+            <img
+                src="assets/images/favicon.png"
+                alt="My Story Shelf"
+                class="footer-logo">
+
+            <h2>My Story Shelf</h2>
+
+            <p class="footer-quote">
+
+                “Every story waits patiently until
+                someone turns its first page.”
+
+            </p>
+
+        </div>
+
+        <!-- Links -->
+
+        <div class="footer-links">
+
+            <div class="footer-column">
+
+                <h3>Navigation</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="#latestStories">Latest Stories</a>
+
+                <a href="#allStories">All Stories</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Account</h3>
+
+                <a href="log-in.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="#">About</a>
+
+            </div>
+
+        </div>
+
+        <!-- Social -->
+
+        <div class="footer-social">
+
+            <h3>Connect</h3>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://github.com/himadrisingh1027-crypto"
+                    target="_blank">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+                <a
+                    href="https://linkedin.com"
+                    target="_blank">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                </a>
+
+                <a
+                    href="mailto:your@email.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            Made with ❤️ by Himadri Singh
+
+        </p>
+
+        <span>
+
+            © 2026 My Story Shelf. All Rights Reserved.
+
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ======================================= CUSTOM CURSOR ======================================= -->
+
+<div id="custom-cursor"></div>
+<!-- ======================================= PARTICLE LAYER ======================================= -->
+
+<div id="particle-layer"></div>
+<!-- ======================================= SCRIPTS ======================================= -->
+
+<script type="module" src="js/firebase/firebase.js">    </script>
+
+<script type="module" src="js/auth/auth.js">    </script>
+
+<script type="module" src="js/auth/protect.js">   </script>
+
+<script type="module" src="js/ui/menu.js">    </script>
+
+<script type="module" src="js/ui/theme.js">    </script>
+
+<script type="module" src="js/ui/cursor.js">    </script>
+
+<script type="module" src="js/ui/particles.js">    </script>
+
+<script type="module" src="js/stories/search.js">    </script>
+
+<script type="module" src="js/ui/user.js">    </script>
+
+<script type="module" src="js/stories/stories.js">    </script>
+
+</body>
+
+</html>

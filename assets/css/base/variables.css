@@ -1,0 +1,211 @@
+/* ==========================================================
+   MY STORY SHELF
+   DESIGN SYSTEM
+   ----------------------------------------------------------
+   Author  : Himadri Singh
+========================================================== */
+
+:root{
+
+/* ============= ROOT VARIABLES ================ */
+
+/* Backgrounds */
+
+--bg-primary:#F6F0E8;
+--bg-secondary:#EFE5D8;
+--bg-tertiary:#FFF9F2;
+
+/* Surfaces */
+
+--surface-primary:#FFFCF8;
+--surface-secondary:#F8F2EA;
+--surface-hover:#F2E8DD;
+
+/* Navigation */
+
+--header-bg:rgba(255,250,244,.82);
+--sidebar-bg:#FAF5EE;
+
+/* Story Cards */
+
+--card-bg:#FFFDFB;
+--card-hover:#FFF8F0;
+
+/* Overlay */
+
+--overlay-light:rgba(25,18,12,.35);
+--overlay-dark:rgba(0,0,0,.55);
+
+/* ============= TYPOGRAPHY COLORS ================ */
+
+--heading:#2D1E15;
+--text-primary:#45352A;
+--text-secondary:#6F5C4C;
+--text-muted:#9C897A;
+--text-white:#FFFFFF;
+
+/* ============= BRAND COLORS ================ */
+
+--accent:#8A5B3E;
+--accent-light:#B48259;
+--accent-dark:#65412A;
+--gold:#C89C3C;
+
+/* ============= STATUS COLORS ================ */
+
+--success:#3E8E5B;
+--warning:#D69E2E;
+--danger:#D64545;
+--info:#4285F4;
+
+/* ============= BORDERS ================ */
+
+--border:#D9C8B5;
+--border-light:#EBE0D4;
+--border-dark:#B99E88;
+
+/* ============= SHADOWS ================ */
+
+--shadow-xs:
+0 1px 3px rgba(0,0,0,.05);
+--shadow-sm:
+0 3px 8px rgba(0,0,0,.08);
+--shadow-md:
+0 10px 25px rgba(0,0,0,.12);
+--shadow-lg:
+0 20px 45px rgba(0,0,0,.18);
+--shadow-xl:
+0 30px 70px rgba(0,0,0,.25);
+
+/* ============= BORDER RADIUS ================ */
+
+--radius-xs:6px;
+--radius-sm:10px;
+--radius-md:16px;
+--radius-lg:22px;
+--radius-xl:32px;
+--radius-round:999px;
+
+/* ============= SPACING SYSTEM ================ */
+
+--space-xxs:4px;
+--space-xs:8px;
+--space-sm:12px;
+--space-md:16px;
+--space-lg:24px;
+--space-xl:32px;
+--space-2xl:48px;
+--space-3xl:64px;
+--space-4xl:96px;
+
+/* ============= CONTAINERS ================ */
+
+--container-sm:760px;
+--container-md:1100px;
+--container-lg:1320px;
+
+/* ============= HEADER ================ */
+
+--header-height:78px;
+--sidebar-width:320px;
+
+/* ============= ICONS ================ */
+
+--icon-sm:18px;
+--icon-md:22px;
+--icon-lg:28px;
+
+/* ============= BUTTONS ================ */
+
+--button-height:48px;
+--button-radius:14px;
+
+/* ============= INPUTS ================ */
+
+--input-height:52px;
+--input-radius:12px;
+
+/* ============= STORY CARDS ================ */
+
+--story-width:310px;
+--story-image-height:220px;
+
+/* ============= TRANSITIONS ================ */
+
+--transition-fast:.18s ease;
+--transition:.35s ease;
+--transition-slow:.55s ease;
+
+/* ============= Z-INDEX ================ */
+
+--z-background:-1;
+--z-normal:1;
+--z-header:100;
+--z-sidebar:1000;
+--z-overlay:999;
+--z-dropdown:1500;
+--z-modal:2000;
+--z-tooltip:3000;
+
+}
+
+/* ============= DARK THEME VARIABLES ================ */
+
+html.dark{
+
+/* Backgrounds */
+--bg-primary:#17120F;
+--bg-secondary:#201814;
+--bg-tertiary:#2B2019;
+
+/* Surfaces */
+--surface-primary:#241C17;
+--surface-secondary:#2E231C;
+--surface-hover:#382A22;
+
+/* Navigation */
+--header-bg:rgba(23,18,15,.88);
+--sidebar-bg:#1D1713;
+
+/* Story Cards */
+--card-bg:#2A211B;
+--card-hover:#362820;
+
+/* Overlay */
+--overlay-light:rgba(0,0,0,.55);
+--overlay-dark:rgba(0,0,0,.72);
+
+
+/* Typography */
+--heading:#FFF8EE;
+--text-primary:#F4EBDC;
+--text-secondary:#D6C3AE;
+--text-muted:#B29C89;
+--text-white:#FFFFFF;
+
+
+/* Brand */
+--accent:#D3A06F;
+--accent-light:#E5B98D;
+--accent-dark:#B77C4A;
+--gold:#E2BC6A;
+
+
+/* Borders */
+--border:#48382E;
+--border-light:#5B4739;
+--border-dark:#362B22;
+
+
+/* Shadows */
+--shadow-xs:
+0 2px 4px rgba(0,0,0,.22);
+--shadow-sm:
+0 5px 12px rgba(0,0,0,.28);
+--shadow-md:
+0 14px 30px rgba(0,0,0,.38);
+--shadow-lg:
+0 26px 55px rgba(0,0,0,.48);
+--shadow-xl:
+0 35px 80px rgba(0,0,0,.58);
+}

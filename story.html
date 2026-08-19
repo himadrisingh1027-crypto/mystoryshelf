@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Read stories from My Story Shelf."
+    >
+
+    <title>Story | My Story Shelf</title>
+
+
+    <!-- Main application CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Story page CSS -->
+    <link rel="stylesheet" href="assets/css/pages/story.css">
+
+    <!-- =====================================================
+         THEME PRELOAD
+         Prevents the page from flashing the wrong theme.
+    ====================================================== -->
+
+    <script>
+
+        (() => {
+
+            const savedTheme =
+                localStorage.getItem("theme");
+
+            const systemDark =
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+
+            if (
+                savedTheme === "dark" ||
+                (!savedTheme && systemDark)
+            ) {
+
+                document.documentElement.classList.add(
+                    "dark"
+                );
+
+            }
+
+        })();
+
+    </script>
+
+</head>
+
+
+<body class="story-page-body">
+
+
+    <!-- =====================================================
+         READING PROGRESS
+    ====================================================== -->
+
+    <div
+        class="reading-progress-container"
+        aria-hidden="true"
+    >
+
+        <div
+            id="readingProgress"
+            class="reading-progress"
+        ></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER / NAVIGATION
+    ====================================================== -->
+
+    <header class="story-header">
+
+        <div class="story-header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="index.html"
+                class="story-brand"
+                aria-label="Return to My Story Shelf"
+            >
+
+                <span class="story-brand-icon">
+                    📖
+                </span>
+
+                <span class="story-brand-name">
+                    My Story Shelf
+                </span>
+
+            </a>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="story-navigation"
+                aria-label="Story navigation"
+            >
+
+                <a
+                    href="index.html"
+                    class="story-nav-link"
+                >
+                    ← Back to Shelf
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN STORY AREA
+    ====================================================== -->
+
+    <main class="story-page">
+
+
+        <!-- =================================================
+             LOADING STATE
+        ================================================== -->
+
+        <div
+            id="storyLoading"
+            class="story-loading"
+            role="status"
+            aria-live="polite"
+        >
+
+            <div class="loading-book">
+
+                <span class="loading-book-icon">
+                    📖
+                </span>
+
+            </div>
+
+            <p>
+                Opening your story...
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STORY CONTAINER
+
+             IMPORTANT:
+             Existing IDs are preserved because story.js
+             uses them.
+        ================================================== -->
+
+        <article
+    id="storyContainer"
+    class="story-container"
+    hidden
+>
+
+
+            <!-- =================================================
+                 STORY HERO
+            ================================================== -->
+
+            <section class="story-hero">
+
+
+                <!-- COVER -->
+
+                <div class="story-cover-column">
+
+                    <div class="story-cover-frame">
+
+                        <div class="story-cover-shadow">
+
+                            <img
+                                id="storyCover"
+                                class="story-cover"
+                                src=""
+                                alt=""
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STORY INFORMATION -->
+
+                <div class="story-info">
+
+
+                    <!-- SMALL LITERARY LABEL -->
+
+                    <p class="story-edition-label">
+                        MY STORY SHELF
+                    </p>
+
+
+
+                    <!-- GENRE -->
+
+                    <p
+                        id="storyGenre"
+                        class="story-genre"
+                    ></p>
+
+
+
+                    <!-- TITLE -->
+
+                    <h1
+                        id="storyTitle"
+                        class="story-title"
+                    ></h1>
+
+
+
+                    <!-- SUBTITLE -->
+
+                    <h2
+                        id="storySubtitle"
+                        class="story-subtitle"
+                    ></h2>
+
+
+
+                    <!-- AUTHOR -->
+
+                    <div class="story-author-wrapper">
+
+                        <span class="story-author-prefix">
+                            Written by
+                        </span>
+
+                        <p
+                            id="storyAuthor"
+                            class="story-author"
+                        ></p>
+
+                    </div>
+
+
+
+                    <!-- TAGS -->
+
+                    <div
+                        id="storyTags"
+                        class="story-tags"
+                    ></div>
+
+
+
+                    <!-- DIVIDER -->
+
+                    <div
+                        class="story-ornament"
+                        aria-hidden="true"
+                    >
+
+                        <span></span>
+
+                        <span>✦</span>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <p
+                        id="storyDescription"
+                        class="story-description"
+                    ></p>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 READING AREA
+            ================================================== -->
+
+            <section class="story-reading-section">
+
+
+                <!-- READING HEADER -->
+
+                <div class="reading-heading">
+
+                    <span class="reading-heading-line"></span>
+
+                    <span class="reading-heading-text">
+                        The Story
+                    </span>
+
+                    <span class="reading-heading-line"></span>
+
+                </div>
+
+
+
+                <!-- STORY CONTENT -->
+
+                <div
+                    id="storyContent"
+                    class="story-content"
+                ></div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 END OF STORY
+            ================================================== -->
+
+            <section class="story-ending">
+
+                <div
+                    class="story-ending-ornament"
+                    aria-hidden="true"
+                >
+
+                    <span>✦</span>
+
+                </div>
+
+                <p class="story-ending-text">
+                    The End
+                </p>
+
+                <p class="story-ending-subtext">
+                    Thank you for reading.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FUTURE ACTION AREA
+            ==================================================
+
+                 These are visual placeholders for now.
+                 We can connect them to Firestore later.
+            ================================================== -->
+
+            <section class="story-actions">
+
+                <button
+                    type="button"
+                    class="story-action-button"
+                    id="storyLikeButton"
+                    aria-label="Like this story"
+                >
+
+                    <span aria-hidden="true">
+                        ♡
+                    </span>
+
+                    <span>
+                        Like
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="story-action-button"
+                    id="storyCommentButton"
+                    aria-label="Comment on this story"
+                >
+
+                    <span aria-hidden="true">
+                        💬
+                    </span>
+
+                    <span>
+                        Reader's Notes
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="story-action-button"
+                    id="storyBookmarkButton"
+                    aria-label="Bookmark this story"
+                >
+
+                    <span aria-hidden="true">
+                        ♧
+                    </span>
+
+                    <span>
+                        Save
+                    </span>
+
+                </button>
+
+            </section>
+
+
+
+        </article>
+
+
+
+        <!-- =====================================================
+             ERROR STATE
+        ====================================================== -->
+
+        <div
+            id="storyError"
+            class="story-error"
+            hidden
+        >
+
+            <div class="story-error-icon">
+                📕
+            </div>
+
+            <p class="story-error-label">
+                THE SHELF IS EMPTY HERE
+            </p>
+
+            <h2>
+                Story not found
+            </h2>
+
+            <p>
+                We couldn't find the story you're looking for.
+                It may have been moved or removed from the shelf.
+            </p>
+
+            <a
+                href="index.html"
+                class="story-error-button"
+            >
+                Return to My Story Shelf
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="story-footer">
+
+        <div class="story-footer-inner">
+
+            <p>
+                My Story Shelf
+            </p>
+
+            <span aria-hidden="true">
+                ✦
+            </span>
+
+            <p>
+                Stories worth remembering.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         READING PROGRESS SCRIPT
+    ====================================================== -->
+
+    <script>
+
+        (() => {
+
+            const progress =
+                document.getElementById(
+                    "readingProgress"
+                );
+
+            if (!progress) return;
+
+
+            function updateReadingProgress() {
+
+                const scrollTop =
+                    window.scrollY;
+
+                const documentHeight =
+                    document.documentElement.scrollHeight -
+                    window.innerHeight;
+
+                if (documentHeight <= 0) {
+
+                    progress.style.width = "0%";
+
+                    return;
+
+                }
+
+                const percentage =
+                    (scrollTop / documentHeight) * 100;
+
+                progress.style.width =
+                    `${Math.min(100, Math.max(0, percentage))}%`;
+
+            }
+
+
+            window.addEventListener(
+                "scroll",
+                updateReadingProgress,
+                { passive: true }
+            );
+
+
+            window.addEventListener(
+                "resize",
+                updateReadingProgress
+            );
+
+
+            updateReadingProgress();
+
+        })();
+
+    </script>
+
+
+
+    <!-- =====================================================
+         FIREBASE + STORY SCRIPT
+
+         IMPORTANT:
+         Keep this exactly as your current working path.
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="js/stories/story.js"
+    ></script>
+
+
+</body>
+
+</html>

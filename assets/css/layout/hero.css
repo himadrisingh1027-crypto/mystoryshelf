@@ -1,0 +1,506 @@
+/* ==========================================================
+   HERO
+   MY STORY SHELF
+========================================================== */
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero{
+
+    position:relative;
+    min-height:100vh;
+    cursor:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:var(--header-height); 
+    isolation: isolate;
+    overflow:hidden;
+     background-image:
+        linear-gradient(
+            rgba(37,26,12,.22),
+            rgba(37,26,12,.22)
+        ),
+        url("../../images/background-image-1.png");
+
+    filter:
+    sepia(.16)
+    brightness(.88)
+    contrast(1.05)
+    saturate(.95);
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.hero *{
+    cursor:none;
+}
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.hero::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+
+    background:
+        radial-gradient(
+            circle at 18% 22%,
+            rgba(255,226,165,.38) 0%,
+            rgba(255,226,165,.18) 18%,
+            rgba(255,226,165,.08) 34%,
+            transparent 60%
+        );
+}
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:min(900px,90%);
+
+    margin:auto;
+
+    text-align:center;
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
+
+.hero-subtitle{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:8px 20px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    letter-spacing:.08em;
+
+    font-size:.9rem;
+
+    text-transform:uppercase;
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.hero-title{
+
+    font-size:clamp(3rem,7vw,5rem);
+
+    color:white;
+
+    margin-bottom:20px;
+
+    text-shadow:
+
+        0 10px 30px rgba(0,0,0,.35);
+
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.hero-description{
+
+    width:min(700px,95%);
+
+    margin:auto;
+
+    margin-bottom:42px;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.94);
+
+}
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.hero-search{
+
+    position:relative;
+
+    width:min(760px,90%);
+
+    height:64px;
+
+    margin:45px auto 0;
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.14);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+/* Search Box */
+
+.hero-search input{
+
+    width:100%;
+
+    height:64px;
+
+    padding-left:64px;
+
+    padding-right:24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.95);
+
+    color:var(--text-primary);
+
+    box-shadow:var(--shadow-lg);
+
+    transition:.3s;
+
+}
+
+
+.hero-search input:focus{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+/* Icon */
+
+.hero-search i{
+
+    position:absolute;
+
+    left:24px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--accent);
+
+    font-size:1.15rem;
+
+}
+
+
+/* ==========================================================
+   SEARCH SUGGESTIONS
+========================================================== */
+
+.search-suggestions{
+
+    position:absolute;
+
+    top:74px;
+
+    width:100%;
+
+    background:var(--surface-primary);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-lg);
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:30;
+
+}
+
+.search-suggestions.active{
+
+    display:block;
+
+}
+
+.search-suggestions li{
+
+    padding:16px 22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.search-suggestions li:hover{
+
+    background:var(--surface-hover);
+
+}
+
+
+/* ==========================================================
+   SCROLL INDICATOR
+========================================================== */
+
+.scroll-down{
+
+    margin-top:60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    font-size:.95rem;
+
+    animation:bounce 2s infinite;
+
+}
+
+
+.scroll-down i{
+
+    font-size:1.4rem;
+
+}
+
+
+/* ==========================================================
+   FLOATING PARTICLES
+========================================================== */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:rgba(255,214,120,.45);
+
+    filter:blur(2px);
+
+    animation:floatParticle linear infinite;
+
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes floatParticle{
+
+    from{
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120px);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ============================ DARK MODE =========================== */
+
+html.dark .hero{
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.55)
+        ),
+        url("../images/background-image-1.png");
+
+    background-size:cover;
+    background-position:center;
+}
+
+html.dark .hero-search input{
+
+    background:rgba(35,28,22,.95);
+
+    color:var(--text-primary);
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:900px){
+
+.hero-title{
+
+    font-size:3.6rem;
+
+}
+
+.hero-description{
+
+    font-size:1rem;
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero-title{
+
+    font-size:2.6rem;
+
+}
+
+.hero-search input{
+
+    height:56px;
+
+}
+
+.hero-subtitle{
+
+    font-size:.8rem;
+
+}
+
+}
+

@@ -1,0 +1,525 @@
+
+/*  BASE  */
+
+@import url("./base/variables.css");
+@import url("./base/reset.css");
+@import url("./base/typography.css");
+@import url("./base/utilities.css");
+
+/*  LAYOUT  */
+
+
+@import url("./layout/header.css");
+@import url("./layout/sidebar.css");
+@import url("./layout/hero.css");
+@import url("./layout/footer.css");
+
+/*  COMPONENTS  */
+
+
+@import url("./components/buttons.css");
+@import url("./components/search.css");
+@import url("./components/story-card.css");
+@import url("./components/cursor.css");
+
+/*  PAGES  */
+
+@import url("./pages/admin.css");
+@import url("./pages/auth.css");
+@import url("./pages/home.css");
+@import url("./pages/story.css");
+
+
+/*  ABOUT HERO  */
+
+.about-hero{
+
+    position:relative;
+
+    padding:180px 20px 130px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 15% 25%,
+        rgba(255,219,135,.22),
+        transparent 38%),
+        linear-gradient(
+        rgba(255,248,239,.82),
+        rgba(255,248,239,.94)),
+        url("../images/background-image-1.png")
+        center/cover no-repeat;
+
+}
+
+html.dark .about-hero{
+
+    background:
+        radial-gradient(circle at 15% 25%,
+        rgba(255,201,92,.14),
+        transparent 35%),
+        linear-gradient(
+        rgba(18,18,18,.74),
+        rgba(18,18,18,.92)),
+        url("../images/background-image-1.png")
+        center/cover no-repeat;
+
+}
+
+.about-tag{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:8px 22px;
+
+    border-radius:999px;
+
+    background:var(--surface-secondary);
+
+    color:var(--accent);
+
+    font-weight:600;
+
+}
+
+.about-hero h1{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    color:var(--heading);
+
+}
+
+.about-hero p{
+
+    max-width:760px;
+
+    margin:32px auto 0;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:var(--text-secondary);
+
+}
+
+/*  ABOUT STORY  */
+
+.about-story{
+
+    padding:100px 20px;
+
+}
+
+.about-story p{
+
+    max-width:900px;
+
+    margin:40px auto 0;
+
+    text-align:center;
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    color:var(--text-secondary);
+
+}
+
+/*  ABOUT VALUES  */
+
+.about-values{
+
+    padding:100px 20px;
+
+}
+
+.value-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:32px;
+
+}
+
+.value-card{
+
+    background:var(--card-bg);
+
+    border-radius:26px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-md);
+
+    transition:.35s;
+
+}
+
+.value-card:hover{
+
+    transform:
+    translateY(-10px);
+
+}
+
+.value-card i{
+
+    font-size:42px;
+
+    color:var(--gold);
+
+    margin-bottom:22px;
+
+}
+
+.value-card h3{
+
+    margin-bottom:14px;
+
+}
+
+.value-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+/*  CREATOR  */
+
+.creator{
+
+    padding:120px 20px;
+
+}
+
+.creator-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    340px 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.creator-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.creator-image img{
+
+    width:320px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid var(--surface-secondary);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.creator-content span{
+
+    color:var(--accent);
+
+    font-weight:600;
+
+}
+
+.creator-content h2{
+
+    margin:12px 0 24px;
+
+}
+
+.creator-content p{
+
+    line-height:2;
+
+    color:var(--text-secondary);
+
+}
+
+.creator-links{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.creator-links a{
+
+    width:50px;
+
+    height:50px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--surface-secondary);
+
+    color:var(--accent);
+
+    transition:.3s;
+
+}
+
+.creator-links a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/*  TIMELINE  */
+
+.timeline{
+
+    padding:120px 20px;
+
+}
+
+.timeline-line{
+
+    position:relative;
+
+    max-width:760px;
+
+    margin:70px auto 0;
+
+}
+
+.timeline-line::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:40px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:var(--accent);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:95px;
+
+    margin-bottom:60px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:31px;
+
+    top:6px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+}
+
+.timeline .year{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    color:var(--heading);
+
+}
+
+.timeline .content{
+
+    margin-top:10px;
+
+    color:var(--text-secondary);
+
+}
+
+/*  ABOUT STATS  */
+
+.about-stats{
+
+    padding:100px 20px;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+.stat{
+
+    background:var(--card-bg);
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.stat h2{
+
+    font-size:3rem;
+
+    color:var(--gold);
+
+}
+
+.stat p{
+
+    margin-top:10px;
+
+    color:var(--text-secondary);
+
+}
+
+/*  QUOTES  */
+
+.about-quote{
+
+    padding:120px 20px;
+
+    text-align:center;
+
+}
+
+.about-quote blockquote{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:2rem;
+
+    line-height:1.8;
+
+    font-family:var(--font-heading);
+
+    color:var(--heading);
+
+    font-style:italic;
+
+}
+
+/*  ABOUT RESPONSIVE  */
+
+@media(max-width:900px){
+
+    .creator-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .creator-links{
+
+        justify-content:center;
+
+    }
+
+    .creator-image img{
+
+        width:240px;
+
+        height:240px;
+
+    }
+
+    .about-hero h1{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .about-hero{
+
+        padding:150px 20px 90px;
+
+    }
+
+    .about-hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .about-quote blockquote{
+
+        font-size:1.4rem;
+
+    }
+
+}

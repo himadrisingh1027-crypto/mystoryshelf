@@ -1,0 +1,178 @@
+/*==========================================================
+HOME PAGE
+==========================================================*/
+
+
+/*==========================================================
+COMMON SECTION
+==========================================================*/
+
+.section,
+.all-stories{
+
+    padding:100px 0;
+
+    position:relative;
+
+}
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+
+/*==========================================================
+SECTION TITLE
+==========================================================*/
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-family:var(--font-heading);
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    color:var(--text-primary);
+
+    margin-bottom:14px;
+
+}
+
+.section-title p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--text-secondary);
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+}
+
+
+/*==========================================================
+LATEST STORIES
+==========================================================*/
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:32px;
+
+}
+
+
+/*==========================================================
+ALL STORIES
+==========================================================*/
+
+.story-list{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+
+}
+
+
+/*==========================================================
+EMPTY STATE
+==========================================================*/
+
+.empty-state{
+
+    grid-column:1/-1;
+
+    padding:80px 30px;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    background:var(--surface-primary);
+
+    border:1px dashed var(--border-light);
+
+    color:var(--text-secondary);
+
+    font-size:1.1rem;
+
+}
+
+
+/*==========================================================
+SECTION DIVIDER
+==========================================================*/
+
+.section::after{
+
+    content:"";
+
+    display:block;
+
+    width:120px;
+
+    height:2px;
+
+    margin:70px auto 0;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--accent),
+        transparent
+    );
+
+}
+
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media (max-width:768px){
+
+    .section,
+    .all-stories{
+
+        padding:70px 0;
+
+    }
+
+    .section-title{
+
+        margin-bottom:40px;
+
+    }
+
+    .story-grid,
+    .story-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
