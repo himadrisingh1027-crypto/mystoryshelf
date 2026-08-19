@@ -1,0 +1,156 @@
+/*==========================================================
+SEARCH BAR
+==========================================================*/
+
+.hero-search{
+
+    width:min(760px,90%);
+    margin:45px auto 0;
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.14);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:60px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    transition:.35s;
+
+}
+
+.hero-search:focus-within{
+
+    transform:translateY(-3px);
+    border-color:rgba(230,190,110,.6);
+
+    box-shadow:
+
+        0 0 20px rgba(230,190,110,.25),
+        0 20px 50px rgba(0,0,0,.2);
+
+}
+
+.search-icon{
+
+    position:absolute;
+
+    left:22px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--accent);
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    transition:
+        opacity .25s,
+        transform .25s;
+
+}
+.search-icon.hidden{
+    opacity:0;
+    transform:translateX(-10px);
+    pointer-events:none;
+}
+
+.hero-search input{
+    flex:1;
+    height:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:var(--text-primary);
+    font-size:1rem;
+    padding-left:58px;
+    padding-right:145px;
+    transition:padding-left .25s;
+
+}
+
+.hero-search input::placeholder{
+
+    color:var(--text-secondary);
+
+    opacity:.85;
+
+}
+
+html:not(.dark) .hero-search{
+
+    background:rgba(255,250,240,.72);
+    border:1px solid rgba(125,90,45,.15);
+
+}
+
+html:not(.dark) .hero-search input{
+
+    color:#3d2d22;
+
+}
+
+html:not(.dark) .hero-search input::placeholder{
+
+    color:#76675b;
+
+}
+
+#searchBtn{
+
+    position:absolute;
+
+    right:8px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+#searchBtn:hover{
+
+    transform:scale(1.05);
+}
+
+.search-icon.hide{
+
+    opacity:0;
+
+    transform:translate(-15px,-50%);
+
+}
+
+.search-suggestions{
+
+    width:min(760px,90%);
+    margin:10px auto;
+    background:var(--surface-primary);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow-lg);
+    display:none;
+
+}
+
+.search-item{
+
+    padding:18px 24px;
+    cursor:pointer;
+    transition:.25s;
+
+}
+
+.search-item:hover{
+
+    background:var(--card-hover);
+
+}
+
+.hero-search.typing input{
+
+    padding-left:22px;
+
+}

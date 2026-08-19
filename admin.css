@@ -1,0 +1,559 @@
+/* ==========================================================
+ADMIN PAGE
+Author : Himadri Singh
+========================================================== */
+
+/* ======================= BODY =======================*/
+
+body{
+
+    margin:0;
+    font-family:"Inter",sans-serif;
+    background:var(--bg-primary);
+    color:var(--text-primary);
+}
+/* ======================= ADMIN HEADER ======================= */
+
+.admin-header{
+
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    backdrop-filter: blur(14px);
+    background:var(--surface-primary);
+    border-bottom:1px solid var(--border);
+    box-shadow:var(--shadow-sm);
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+}
+
+.logo i{
+
+    font-size:28px;
+    color:var(--accent);
+
+}
+
+.logo h1{
+
+    margin:0;
+    font-family:"Playfair Display";
+    color:var(--heading);
+    font-size:28px;
+
+}
+
+.home-btn{
+
+    text-decoration:none;
+    color:white;
+    background:var(--accent);
+    padding:12px 22px;
+    border-radius:12px;
+    transition:.3s;
+
+}
+
+.home-btn:hover{
+
+    background:var(--accent-dark);
+
+}
+/* ======================= MAIN CONTAINER ======================= */
+.admin-container{
+
+    width:min(1400px,92%);
+    margin:50px auto;
+
+}
+
+/*  ======================= TOP CARDS ======================= */
+
+.dashboard-cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    margin-bottom:45px;
+
+}
+
+.card{
+
+    background:var(--card-bg);
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    box-shadow:var(--shadow-sm);
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-md);
+    cursor:default;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+    color:var(--text-secondary);
+
+}
+
+.card p{
+
+    font-size:42px;
+    font-weight:700;
+    color:var(--accent);
+
+}
+/* ======================= SECTIONS ======================= */
+
+.admin-section{
+
+    background:var(--surface-primary);
+    font-family:"Playfair Display";
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:40px;
+    box-shadow:var(--shadow-sm);
+
+}
+
+.admin-section h2{
+
+    margin-top:0;
+    margin-bottom:30px;
+    color:var(--heading);
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+/* ======================= FORM GRID ======================= */
+
+.form-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: 30px;
+
+}
+
+.input-group{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.input-group label,
+.admin-section label{
+
+    margin-bottom:10px;
+    font-weight:600;
+    color:var(--heading);
+
+}
+/* ======================= INPUTS ======================= */
+input,
+select,
+textarea{
+
+    width:100%;
+    padding:15px 18px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--card-bg);
+    color:var(--text-primary);
+    font-size:16px;
+    font-family:inherit;
+    transition:.3s;
+    box-sizing:border-box;
+
+}
+
+textarea{
+
+    resize:vertical;
+    min-height:120px;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 4px rgba(138,91,62,.15);
+
+}
+/* ======================= BOOK APPEARANCE ======================= */
+
+.appearance-layout{
+
+    display:grid;
+    grid-template-columns:1fr 300px;
+    gap:50px;
+    align-items:center;
+
+}
+
+.appearance-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+/* ======================= BOOK PREVIEW ======================= */
+/* ==========================================================
+BOOK PREVIEW
+========================================================== */
+
+.book-preview {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.preview-book {
+
+    display: flex;
+
+    width: 240px;
+
+    height: 340px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-lg);
+
+    background: var(--surface-secondary);
+
+}
+
+
+/* ==========================================================
+COVER
+========================================================== */
+
+.preview-cover {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: var(--surface-secondary);
+
+    color: var(--text-secondary);
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+.cover-placeholder {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+
+/* ==========================================================
+SPINE
+========================================================== */
+
+.preview-spine {
+
+    width: 70px;
+    min-width: 70px;
+    background: #4d3324;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+
+}
+
+/* SPINE CONTENT */
+
+.spine-content {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+
+}
+
+/* SPINE TEXT */
+
+.spine-content span {
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    white-space: nowrap;
+
+}
+
+/* TITLE */
+
+#previewTitle {
+
+    color: #f6e7c1;
+    font-size: 16px;
+
+}
+
+/* GENRE */
+
+#previewGenre {
+
+    color: #f6e7c1;
+    font-size: 12px;
+
+}
+
+/* AUTHOR */
+
+#previewAuthor {
+
+    color: #f6e7c1;
+    font-size: 11px;
+
+}
+/* ======================= PUBLISH OPTIONS ======================= */
+
+.publish-options{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.publish-options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+/*  ======================= BUTTONS ======================= */
+
+.publish-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:20px;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+    border:none;
+
+    padding:15px 34px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.primary-btn{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+.primary-btn:hover{
+
+    background:var(--accent-dark);
+
+}
+
+.primary-btn:disabled{
+
+opacity:.6;
+
+cursor:not-allowed;
+
+}
+
+.secondary-btn{
+
+    background:var(--surface-hover);
+
+    color:var(--heading);
+
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ======================= LOADING ======================= */
+
+.loading{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* ======================= SUCCESS MESSAGE ======================= */
+
+.success-message{
+
+background:#dff5e6;
+
+color:#2b6d3b;
+
+padding:15px;
+
+border-radius:12px;
+
+}
+
+/* ======================= ERROR MESSAGE ======================= */
+
+.error-message{
+
+background:#ffe5e5;
+
+color:#b32121;
+
+padding:15px;
+
+border-radius:12px;
+
+}
+/* ======================= RESPONSIVE ======================= */
+
+@media(max-width:1000px){
+
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.appearance-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.book-preview{
+
+margin-top:30px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.admin-header{
+
+padding:18px 25px;
+
+}
+
+.logo h1{
+
+font-size:22px;
+
+}
+
+.dashboard-cards{
+
+grid-template-columns:1fr;
+
+}
+
+.publish-buttons{
+
+flex-direction:column;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+width:100%;
+
+}
+
+}

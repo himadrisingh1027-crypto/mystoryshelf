@@ -1,0 +1,183 @@
+/* ==========================================================
+   RESET
+   MY STORY SHELF
+========================================================== */
+
+/* ==========================================================
+   UNIVERSAL RESET
+========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ============= html ================ */
+html{
+
+    font-size:16px;
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+
+}
+
+/* ============= body ================ */
+body{
+
+    min-height:100vh;
+    background:var(--bg-primary);
+    color:var(--text-primary);
+    font-family:"Inter",sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+/* ============= media ================ */
+img,
+picture,
+svg,
+video,
+canvas{
+    display:block;
+    max-width:100%;
+    user-select:none;
+
+}
+
+/* ============= links ================ */
+a{
+    color:inherit;
+    text-decoration:none;
+    transition:
+        color var(--transition-fast);
+
+}
+
+/* ============= buttons ================ */
+button{
+    border:none;
+    outline:none;
+    background:none;
+    cursor:pointer;
+    font:inherit;
+    color:inherit;
+
+}
+
+/* ============= form elements ================ */
+input,
+textarea,
+select{
+    font:inherit;
+    color:inherit;
+    border:none;
+    outline:none;
+    background:none;
+
+}
+textarea{
+    resize:vertical;
+
+}
+
+/* ============= lists ================ */
+ul,
+ol{
+    list-style:none;
+
+}
+
+/* ============= table ================ */
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+
+}
+
+/* ============= HEADINGS ================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight:700;
+}
+
+/* ============= PARAGRAPHS ================ */
+p{
+    color:var(--text-secondary);
+}
+
+/* ============= HORIZONTAL RULE ================ */
+hr{
+    border:none;
+    height:1px;
+    background:var(--border);
+
+}
+
+/* ============= SELECTION ================ */
+::selection{
+    background:var(--accent);
+    color:white;
+
+}
+
+/* ============= SCROLLBAR ================ */
+::-webkit-scrollbar{
+    width:10px;
+
+}
+::-webkit-scrollbar-track{
+    background:var(--bg-secondary);
+
+}
+::-webkit-scrollbar-thumb{
+    background:var(--accent);
+    border-radius:var(--radius-round);
+
+}
+::-webkit-scrollbar-thumb:hover{
+    background:var(--accent-dark);
+
+}
+
+/* ============= FOCUS VISIBILITY ================ */
+:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+
+}
+
+/* ============= PLACEHOLDER ================ */
+::placeholder{
+    color:var(--text-muted);
+    opacity:1;
+
+}
+
+/* ============= DISABLED ================ */
+:disabled{
+    cursor:not-allowed;
+    opacity:.6;
+
+}
+
+/* ============= HIDDEN ================ */
+[hidden]{
+    display:none !important;
+
+}

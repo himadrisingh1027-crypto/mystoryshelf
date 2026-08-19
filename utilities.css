@@ -1,0 +1,315 @@
+/* ==========================================================
+   UTILITIES
+   MY STORY SHELF
+========================================================== */
+
+/* ============= Containers ================ */
+
+.container{
+    width:min(var(--container-lg),92%);
+    margin-inline:auto;
+}
+.container-md{
+    width:min(var(--container-md),92%);
+    margin-inline:auto;
+}
+.container-sm{
+    width:min(var(--container-sm),92%);
+    margin-inline:auto;
+}
+
+/* ============= Sections ================ */
+
+.section{
+    padding:var(--space-4xl) 0;
+}
+.section-sm{
+    padding:var(--space-3xl) 0;
+}
+.section-lg{
+    padding:120px 0;
+}
+
+/* ============= Flex ================ */
+
+.flex{
+    display:flex;
+}
+.grid{
+    display:grid;
+}
+.block{
+    display:block;
+}
+.inline{
+    display:inline;
+}
+.inline-block{
+    display:inline-block;
+}
+
+/* ============= Flex helpers ================ */
+
+.flex-center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.flex-between{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.flex-around{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.flex-column{
+    display:flex;
+    flex-direction:column;
+}
+.flex-wrap{
+    flex-wrap:wrap;
+}
+.align-center{
+    align-items:center;
+}
+.justify-center{
+    justify-content:center;
+}
+.justify-between{
+    justify-content:space-between;
+}
+.gap-xs{
+    gap:var(--space-xs);
+}
+.gap-sm{
+    gap:var(--space-sm);
+}
+.gap-md{
+    gap:var(--space-md);
+}
+.gap-lg{
+    gap:var(--space-lg);
+}
+.gap-xl{
+    gap:var(--space-xl);
+}
+
+/* ============= Grid helpers ================ */
+
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:var(--space-xl);
+}
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--space-xl);
+}
+.grid-4{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--space-xl);
+}
+.auto-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+    gap:var(--space-xl);
+}
+
+/* ============= Width & Height ================ */
+
+.w-100{
+    width:100%;
+}
+.h-100{
+    height:100%;
+}
+
+/* ============= Position ================ */
+
+.relative{
+    position:relative;
+}
+.absolute{
+    position:absolute;
+}
+.fixed{
+    position:fixed;
+}
+
+/* ============= Text Alignment ================ */
+
+.text-center{
+    text-align:center;
+}
+.text-left{
+    text-align:left;
+}
+.text-right{
+    text-align:right;
+}
+.uppercase{
+    text-transform:uppercase;
+}
+.capitalize{
+    text-transform:capitalize;
+}
+
+/* ============= Margins ================ */
+
+.mt-xs{margin-top:var(--space-xs);}
+.mt-sm{margin-top:var(--space-sm);}
+.mt-md{margin-top:var(--space-md);}
+.mt-lg{margin-top:var(--space-lg);}
+.mt-xl{margin-top:var(--space-xl);}
+.mt-2xl{margin-top:var(--space-2xl);}
+
+.mb-xs{margin-bottom:var(--space-xs);}
+.mb-sm{margin-bottom:var(--space-sm);}
+.mb-md{margin-bottom:var(--space-md);}
+.mb-lg{margin-bottom:var(--space-lg);}
+.mb-xl{margin-bottom:var(--space-xl);}
+.mb-2xl{margin-bottom:var(--space-2xl);}
+
+/* ============= Padding ================ */
+
+.p-xs{padding:var(--space-xs);}
+.p-sm{padding:var(--space-sm);}
+.p-md{padding:var(--space-md);}
+.p-lg{padding:var(--space-lg);}
+.p-xl{padding:var(--space-xl);}
+.p-2xl{padding:var(--space-2xl);}
+
+/* ============= Border Radius ================ */
+
+.rounded-sm{
+    border-radius:var(--radius-sm);
+}
+.rounded{
+    border-radius:var(--radius-md);
+}
+.rounded-lg{
+    border-radius:var(--radius-lg);
+}
+.rounded-xl{
+    border-radius:var(--radius-xl);
+}
+.rounded-full{
+    border-radius:999px;
+}
+
+/* ============= Shadows ================ */
+
+.shadow-sm{
+    box-shadow:var(--shadow-sm);
+}
+.shadow{
+    box-shadow:var(--shadow-md);
+}
+.shadow-lg{
+    box-shadow:var(--shadow-lg);
+}
+
+/* ============= Glass Effect ================ */
+
+.glass{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+/* ============= Hover Effects ================ */
+
+.hover-lift{
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+.hover-lift:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lg);
+}
+.hover-scale{
+    transition:transform var(--transition);
+}
+.hover-scale:hover{
+    transform:scale(1.03);
+}
+
+/* ============= Overflow ================ */
+
+.overflow-hidden{
+    overflow:hidden;
+}
+
+/* ============= Hidden ================ */
+
+.visually-hidden{
+    position:absolute;
+    width:1px;
+    height:1px;
+    margin:-1px;
+    padding:0;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+
+/* ============= Display ================ */
+
+.hidden{
+    display:none !important;
+}
+.invisible{
+    visibility:hidden;
+}
+.visible{
+    visibility:visible;
+}
+
+/* ============= Divider ================ */
+
+.divider{
+    width:100%;
+    height:1px;
+    background:var(--border);
+    margin:var(--space-xl) 0;
+}
+
+/* ============= Surface ================ */
+
+/* Level 1 - Flat */
+.surface{
+    background:var(--surface-primary);
+}
+
+/* Level 2 - Raised */
+.surface-raised{
+    background:var(--surface-primary);
+    box-shadow:var(--shadow-sm);
+}
+
+/* Level 3 - Floating */
+.surface-floating{
+    background:var(--surface-primary);
+    box-shadow:var(--shadow-lg);
+}
+
+/*============= Theme Transition =============*/
+
+.theme-transition,
+.theme-transition *{
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        opacity .3s ease;
+
+}

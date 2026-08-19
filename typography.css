@@ -1,0 +1,239 @@
+/* ==========================================================
+   TYPOGRAPHY
+   MY STORY SHELF
+========================================================== */
+
+
+/* ============= Body ================ */
+
+body{
+    font-family:
+        "Inter",
+        sans-serif;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.7;
+    color:var(--text-primary);
+
+}
+
+/* ============= Headings ================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+    color:var(--heading);
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:-.02em;
+
+}
+
+/* ============= Heading Sizes ================ */
+
+h1{
+    font-size:clamp(2.8rem,5vw,4.5rem);
+}
+
+h2{
+    font-size:clamp(2.1rem,4vw,3rem);
+}
+
+h3{
+    font-size:1.75rem;
+}
+
+h4{
+    font-size:1.4rem;
+}
+
+h5{
+    font-size:1.15rem;
+}
+
+h6{
+    font-size:1rem;
+}
+
+/* ============= Paragraphs ================ */
+
+p{
+    color:var(--text-secondary);
+    margin-bottom:1rem;
+    max-width:70ch;
+
+}
+
+/* ============= Small Text ================ */
+
+small{
+    font-size:.875rem;
+    color:var(--text-muted);
+}
+
+/* ============= Links ================ */
+
+a{
+    color:var(--accent);
+    transition:
+       color var(--transition-fast);
+}
+a:hover{
+    color:var(--accent-dark);
+}
+
+/* ============= Strong & Emphasis ================ */
+
+strong{
+    font-weight:700;
+    color:var(--heading);
+}
+em{
+    font-style:italic;
+}
+
+/* ============= Blockquote ================ */
+blockquote{
+    margin:2rem 0;
+    padding:1.5rem 2rem;
+    border-left:4px solid var(--gold);
+    background:var(--surface-secondary);
+    border-radius:0 var(--radius-md) var(--radius-md) 0;
+    font-family:
+        "Playfair Display",
+        serif;
+    font-size:1.15rem;
+    font-style:italic;
+    color:var(--text-secondary);
+    box-shadow:var(--shadow-sm);
+
+}
+
+/* ============= Lists ================ */
+
+.content ul{
+    list-style:disc;
+    padding-left:1.5rem;
+
+}
+
+.content ol{
+    list-style:decimal;
+    padding-left:1.5rem;
+
+}
+
+.content li{
+    margin-bottom:.6rem;
+
+}
+/* ============= Code ================ */
+
+code{
+    padding:.2rem .45rem;
+    border-radius:var(--radius-xs);
+    background:var(--surface-secondary);
+    font-family:
+        Consolas,
+        monospace;
+    font-size:.9rem;
+
+}
+pre{
+    padding:1.5rem;
+    border-radius:var(--radius-md);
+    background:var(--surface-secondary);
+    overflow:auto;
+}
+pre code{
+    background:none;
+    padding:0;
+
+}
+
+/* ============= Horizontal Rule ================ */
+
+hr{
+    margin:3rem 0;
+}
+
+/* ============= Text Alignment ================ */
+
+.text-center{
+    text-align:center;
+}
+.text-left{
+    text-align:left;
+}
+.text-right{
+    text-align:right;
+}
+.text-muted{
+    color:var(--text-muted);
+}
+.text-accent{
+    color:var(--accent);
+}
+.text-gold{
+    color:var(--gold);
+}
+
+/* ============= Section Titles ================ */
+
+.section-title{
+    text-align:center;
+    margin-bottom:var(--space-3xl);
+
+}
+.section-title h2{
+    margin-bottom:1rem;
+}
+
+.section-title p{
+    margin:0 auto;
+    color:var(--text-muted);
+    max-width:650px;
+
+}
+/* ============= Hero Typography ================ */
+
+.hero h1{
+    color:white;
+    text-shadow:
+        0 6px 18px rgba(0,0,0,.35);
+}
+.hero p{
+    color:
+        rgba(255,255,255,.92);
+    margin:auto;
+}
+
+/* ============= Login Box ================ */
+
+.login-box h2{
+    text-align:center;
+    margin-bottom:.5rem;
+}
+.subtitle{
+    text-align:center;
+    color:var(--text-muted);
+    margin-bottom:2rem;
+}
+
+/* ============= Footer ================ */
+
+footer h2,
+footer h3{
+    color:var(--heading);
+}
+
+footer p{
+    color:var(--text-secondary);
+}
